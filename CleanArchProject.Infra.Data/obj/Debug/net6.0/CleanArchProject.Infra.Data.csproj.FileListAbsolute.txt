@@ -1,4 +1,5 @@
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\bin\Debug\net6.0\CleanArchProject.Infra.Data.deps.json
+C:\dev\CleanArchProject\CleanArchProject.Infra.Data\bin\Debug\net6.0\CleanArchProject.Infra.Data.runtimeconfig.json
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\bin\Debug\net6.0\CleanArchProject.Infra.Data.dll
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\bin\Debug\net6.0\ref\CleanArchProject.Infra.Data.dll
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\bin\Debug\net6.0\CleanArchProject.Infra.Data.pdb
@@ -13,3 +14,4 @@ C:\dev\CleanArchProject\CleanArchProject.Infra.Data\obj\Debug\net6.0\CleanArchPr
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\obj\Debug\net6.0\CleanArchProject.Infra.Data.dll
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\obj\Debug\net6.0\ref\CleanArchProject.Infra.Data.dll
 C:\dev\CleanArchProject\CleanArchProject.Infra.Data\obj\Debug\net6.0\CleanArchProject.Infra.Data.pdb
+C:\dev\CleanArchProject\CleanArchProject.Infra.Data\obj\Debug\net6.0\CleanArchProject.Infra.Data.genruntimeconfig.cache
