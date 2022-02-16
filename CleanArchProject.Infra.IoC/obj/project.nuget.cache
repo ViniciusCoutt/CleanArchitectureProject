@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "GU4rJ3IbvoFWx9i8BZqMo436JiHXF2W+xxr/sJhNGRf4j0fyWKmm9diQrnRXSba/Etz4bbamIaUMUyXyIe326w==",
+  "dgSpecHash": "rb2UmpJHjp0MakV7XPnx9cgdgl0Tr/HmdKS9UVA7t4Ayjqk10wUsiikyRekfNGb0a3aZkgDtqjdX178F/GvqCw==",
   "success": true,
   "projectFilePath": "C:\\dev\\CleanArchProject\\CleanArchProject.Infra.IoC\\CleanArchProject.Infra.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Framework\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Framework\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Framework\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Framework\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\Framework\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\Framework\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Framework\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Framework\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
