@@ -10,7 +10,8 @@ namespace CleanArchProject.Application.Products.Handlers
         private readonly IProductRepository _productRepository;
         public ProductUpdateCommandHandler(IProductRepository productRepository)
         {
-            _productRepository = productRepository;
+            _productRepository = productRepository ??
+                throw new ArgumentNullException(nameof(productRepository));
         }
         public async Task<Product> Handle(ProductUpdateCommand request, CancellationToken cancellationToken)
         {
@@ -19,7 +20,8 @@ namespace CleanArchProject.Application.Products.Handlers
             if (product == null)
                 throw new ApplicationException($"Not found");
 
-            product.Update(request.Name, request.Description, request.Price, request.Stock, request.Image);
+            product.Update(request.Name, request.Description, request.Price, request.Stock, request.Image, request.CategoryId);
+
             return await _productRepository.UpdateAsync(product);
         }
     }
