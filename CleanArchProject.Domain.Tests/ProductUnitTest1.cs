@@ -92,7 +92,7 @@ namespace CleanArchProject.Domain.Tests
         [Fact]
         public void UpdateCategory_WithValidParam_NotThrowException()
         {
-            Action action = () => new Product(1, "name", "Description", 100.50m, 5, "image code").Update("name2", "Description2", 100.50m, 5, "image code2");
+            Action action = () => new Product(1, "name", "Description", 100.50m, 5, "image code").Update("name2", "Description2", 100.50m, 5, "image code2", 2);
             action.Should()
                 .NotThrow<DomainExceptionValidation>();
         }
