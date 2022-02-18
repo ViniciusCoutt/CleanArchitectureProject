@@ -25,7 +25,7 @@ namespace CleanArchProject.Application.Services
             return _mapper.Map<IEnumerable<CategoryDTO>>(categories);
         }
 
-        public async Task<CategoryDTO> GetById(int? id)
+        public async Task<CategoryDTO> GetCategoryById(int? id)
         {
             var category = await _catRepository.GetByIdAsync(id);
             return _mapper.Map<CategoryDTO>(category);
