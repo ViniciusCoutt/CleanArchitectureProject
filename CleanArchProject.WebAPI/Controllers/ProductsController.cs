@@ -1,4 +1,5 @@
-﻿using CleanArchProject.Application.Interfaces;
+﻿using CleanArchProject.Application.DTOs;
+using CleanArchProject.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchProject.WebAPI.Controllers
@@ -16,7 +17,56 @@ namespace CleanArchProject.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts() =>
-            Ok(await _productService.GetProducts());
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> Get() {
+            var products = await _productService.GetProducts();
+            if (products == null) return NotFound("Products not found");
+            return Ok(products);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProductDTO>> GetById(int id)
+        {
+            var product = await _productService.GetProductById(id);
+            if (product == null) return NotFound("Product not found");
+            return Ok(product);
+        }
+
+        [HttpGet("ByCategory/{id}")]
+        public async Task<IActionResult> GetProductByCategoryId(int id)
+        {
+            var product = await _productService.GetProductByCategoryId(id);
+            if (product == null) return NotFound("Product not found");
+            return Ok(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ProductDTO productDto)
+        {
+            if (productDto == null) return BadRequest("Invalid Data");
+            await _productService.Add(productDto);
+            return CreatedAtAction(nameof(Create), productDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, ProductDTO productDto)
+        {
+            if (id != productDto.Id) return BadRequest("Not corresponding data");
+
+            var existingCategory = await _productService.GetProductById(id);
+            if (existingCategory is null) return NotFound("There's nothing to update");
+
+            await _productService.Update(productDto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var existingProduct = await _productService.GetProductById(id);
+            if (existingProduct is null)
+                return NotFound("Product not found");
+            await _productService.Delete(id);
+            return NoContent();
+        }
     }
 }
