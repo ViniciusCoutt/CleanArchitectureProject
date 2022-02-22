@@ -18,10 +18,9 @@ namespace CleanArchProject.Application.Products.Handlers
         {
             var product = await _productRepository.GetByIdAsync(request.Id);
 
-            if (product == null) throw new ApplicationException($"Entity could not be found.");
+            if (product is null) throw new ApplicationException($"Entity could not be found.");
 
-            var result = await _productRepository.DeleteAsync(product);
-            return result;
+            return await _productRepository.DeleteAsync(product);
         }
-    }
+    } 
 }

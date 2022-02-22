@@ -44,7 +44,7 @@ namespace CleanArchProject.Application.Services
             return _mapper.Map<ProductDTO>(result);
         }
 
-        public async Task<ProductDTO> GetProductByCategoryId(int? id)
+        public async Task<IEnumerable<ProductDTO>> GetProductByCategoryId(int? id)
         {
             var productByCategoryIdQuery = new GetProductByCategoryIdQuery(id.Value);
 
@@ -53,7 +53,7 @@ namespace CleanArchProject.Application.Services
 
             var result = await _mediator.Send(productByCategoryIdQuery);
 
-            return _mapper.Map<ProductDTO>(result);
+            return _mapper.Map<IEnumerable<ProductDTO>>(result);
         }
 
         public async Task Add(ProductDTO dto)

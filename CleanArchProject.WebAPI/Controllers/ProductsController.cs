@@ -23,7 +23,7 @@ namespace CleanArchProject.WebAPI.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<ProductDTO>> GetById(int id)
         {
             var product = await _productService.GetProductById(id);
@@ -31,8 +31,8 @@ namespace CleanArchProject.WebAPI.Controllers
             return Ok(product);
         }
 
-        [HttpGet("ByCategory/{id}")]
-        public async Task<IActionResult> GetProductByCategoryId(int id)
+        [HttpGet("ByCategory/{id:int}")]
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProductByCategoryId(int id)
         {
             var product = await _productService.GetProductByCategoryId(id);
             if (product == null) return NotFound("Product not found");
@@ -47,7 +47,7 @@ namespace CleanArchProject.WebAPI.Controllers
             return CreatedAtAction(nameof(Create), productDto);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, ProductDTO productDto)
         {
             if (id != productDto.Id) return BadRequest("Not corresponding data");
@@ -59,8 +59,8 @@ namespace CleanArchProject.WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
         {
             var existingProduct = await _productService.GetProductById(id);
             if (existingProduct is null)

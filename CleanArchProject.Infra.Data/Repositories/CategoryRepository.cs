@@ -24,7 +24,9 @@ namespace CleanArchProject.Infra.Data.Repositories
         }
         public async Task<Category> GetByIdAsync(int? id)
         {
-            return await _context.Categories.FindAsync(id);
+            return await _context.Categories
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Category> CreateAsync(Category entity)

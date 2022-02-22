@@ -40,20 +40,20 @@ namespace CleanArchProject.WebAPI.Controllers
             return CreatedAtAction(nameof(Create), categoryDto);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<CategoryDTO>> Update(int id, CategoryDTO categoryDto)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Update(int id, CategoryDTO categoryDto)
         {
             if (id != categoryDto.Id) return BadRequest("Not corresponding data");
 
             var existingCategory = await _categoryService.GetCategoryById(id);
-            if (existingCategory is null) return NotFound("There's nothing to update");
+            if (existingCategory == null) return NotFound("There's nothing to update");
 
             await _categoryService.Update(categoryDto);
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<CategoryDTO>> DeleteCategories(int id)
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> DeleteCategories(int id)
         {
             var existingCategory = await _categoryService.GetCategoryById(id);
             if (existingCategory is null) 
