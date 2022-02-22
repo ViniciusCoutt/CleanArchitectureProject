@@ -12,10 +12,14 @@
 
   <ItemGroup>
 	<Folder Include="Context\" />
-    <Folder Include="Identity\" />
+	<Folder Include="EntitiesConfiguration\" />
+	<Folder Include="Migrations\" />
+	<Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
       <PrivateAssets>none</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
