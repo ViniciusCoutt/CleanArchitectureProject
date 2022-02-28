@@ -1,4 +1,4 @@
-## Aplicação ASP.NET Core Web API que permite o gerenciamento de produtos e suas categorias.
+Aplicação ASP.NET Core Web API que permite o gerenciamento de produtos e suas categorias.
 
 ### Escopo Geral
 
